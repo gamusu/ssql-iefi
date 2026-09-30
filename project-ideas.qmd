@@ -1,0 +1,120 @@
+---
+title: "Project ideas"
+subtitle: "Tracking and quantitative methods for the 2026–27 IEFI projects"
+---
+
+Every project can **track** something. Many can also build a **method** into their
+programming or reflection. Pick the level that fits: *light* (tracking and a
+feedback form), *medium* (a pre/post survey or data-based profile), or *deep*
+(a small research design or mapping project).
+
+::: {.callout-tip}
+## Talk to SSQL early
+A 30-minute consultation at the start of your project is much more useful than one
+the week your reflection is due.
+:::
+
+::: {.project-card}
+### Bearing Witness, From Page to Place
+**Method:** Map trip sites alongside county-level historical data such as population
+change during the Great Migration, voting access, or school segregation.
+
+**Track:** Course materials developed; optionally a pre/post survey of enrolled students.
+
+**Reflection:** What can numbers capture about memory and place, and what can't they?
+
+**Skills:** GIS, archival research, mixed methods.
+:::
+
+::: {.project-card}
+### Building Your Identity Through Career Development
+**Method:** A needs-assessment survey of the pilot population on career interests,
+confidence, and awareness of resources.
+
+**Track:** Panel attendance, pre/post confidence ratings, Affinity page analytics.
+
+**Reflection:** Compare what students said they needed with what they used.
+
+**Skills:** Survey design, user research, web analytics.
+:::
+
+::: {.project-card}
+### Disability Identity, Community, and Support
+**Method:** A structured accessibility audit of spaces, events, or web pages, and a
+campus-wide survey on accessibility attitudes.
+
+**Track:** Event attendance and pre/post awareness.
+
+**Care:** Disability status is often undisclosed; report in aggregate and make the survey itself accessible.
+
+**Skills:** Accessibility auditing, universal design.
+:::
+
+::: {.project-card}
+### Faculty & Staff Spotlight Series
+**Method:** A brief pre/post belonging measure and a follow-up asking whether students
+reached out to a featured faculty or staff member.
+
+**Track:** Attendance by students, faculty, and staff; reach among first-gen, transfer, and underrepresented students.
+
+**Reflection:** Connect results to the Strayhorn and Tinto research cited in the project.
+
+**Skills:** Event evaluation, research-to-practice.
+:::
+
+::: {.project-card}
+### Good Trouble & Good Eats
+**Method:** Measure connection before and after, for example with a short validated
+loneliness scale, or map who connected with whom.
+
+**Track:** Attendance, repeat participation, and where participants come from on campus.
+
+**Reflection:** Pair the numbers with the stories shared at the table.
+
+**Skills:** Program evaluation, social network basics.
+:::
+
+::: {.project-card}
+### IEFI 2.0: Assessing Our Toolkit and Looking at AI Use
+**Method:** Surveys of past fellows and advisors, analysis of program records, and a
+rubric-based pilot comparing AI tools with current processes.
+
+**Track:** Time and quality measures during the pilot.
+
+**Skills:** Program evaluation, organizational and technology assessment.
+:::
+
+::: {.project-card}
+### Redefining Wellness: The Spiritual Awakening Project
+**Method:** A start- and end-of-year awareness survey, such as the share of students who know
+the Interfaith Center serves nonreligious students.
+
+**Track:** Attendance at meetups, hands-on projects, and service events; compare with earlier years if records exist.
+
+**Care:** Keep religious identity questions optional.
+
+**Skills:** Longitudinal tracking, outreach measurement.
+:::
+
+::: {.project-card}
+### Revitalizing Learning 4 Life
+**Method:** Participation analysis by role and a short barriers survey for non-participants.
+
+**Track:** Sessions offered and enrollment over time; a map of potential collaborators.
+
+**Reflection:** Connect to Educational Studies research on cross-generational learning.
+
+**Skills:** Participation analysis, barrier assessment.
+:::
+
+::: {.project-card}
+### Strong Mind, Strong Body, Strong Spirit
+**Method:** Podcast analytics and a before-and-after survey on attitudes toward seeking
+mental health support.
+
+**Track:** Episode reach, drop-off points, listener feedback.
+
+**Care:** Teams are small; report only in aggregate and work with CAPS on wording.
+
+**Skills:** Media analytics, audience research.
+:::

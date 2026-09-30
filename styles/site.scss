@@ -1,0 +1,39 @@
+/*-- scss:defaults --*/
+// ------------------------------------------------------------------
+// Variables here override the Bootswatch theme's defaults.
+// Bootstrap variable names: https://getbootstrap.com/docs/5.3/customize/sass/
+// Tip: open the rendered page, inspect an element, and look for the
+// variable that controls it.
+// ------------------------------------------------------------------
+
+// Shared palette (keep in sync with styles/slides.scss).
+// TODO: check Swarthmore's brand guidelines for the official garnet.
+$garnet:  #8A1F35;
+$ink:     #1F2A36;
+$teal:    #2E7D6B;
+$mist:    #EEF1F4;
+
+// Fonts from Google Fonts, with fallbacks.
+@import url('https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;600&family=Source+Serif+4:opsz,wght@8..60,600&display=swap');
+
+$font-family-sans-serif: "Public Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+$headings-font-family:   "Source Serif 4", Georgia, serif;
+
+$primary:    $garnet;
+$success:    $teal;
+$body-color: $ink;
+$link-color: $garnet;
+$navbar-bg:  $ink;
+
+/*-- scss:rules --*/
+// ------------------------------------------------------------------
+// Plain CSS rules go here, after Bootstrap has been compiled.
+// ------------------------------------------------------------------
+.project-card {
+  border-left: 4px solid $garnet;
+  background: $mist;
+  padding: 1rem 1.25rem;
+  margin-bottom: 1.25rem;
+  border-radius: 0 6px 6px 0;
+}
+.project-card h3 { margin-top: 0; }

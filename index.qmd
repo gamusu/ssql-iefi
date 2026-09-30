@@ -1,0 +1,31 @@
+---
+title: "Count what counts"
+subtitle: "The Social Science Quantitative Lab and the Inclusive Excellence Fellows Initiative"
+toc: false
+---
+
+This site holds the slides and a companion handout for a 30-minute session with
+Swarthmore's Inclusive Excellence Fellows.
+
+::: {.grid}
+::: {.g-col-12 .g-col-md-6}
+### [Slides](slides.qmd)
+The presentation. Press **F** for full screen, **S** for speaker notes, and
+**O** for a slide overview.
+:::
+
+::: {.g-col-12 .g-col-md-6}
+### [Project ideas](project-ideas.qmd)
+Ideas for bringing tracking and a quantitative method into each 2026–27
+fellowship project.
+:::
+:::
+
+## What the session covers
+
+1. **Tracking and evaluation** — why every project should count attendance and
+   engagement, and how to do it simply.
+2. **A method in your project** — ways to bring quantitative social science into
+   your programming or your reflection.
+3. **An integrative experience** — connecting your academic interests, a community
+   need, and career skills.

@@ -1,0 +1,57 @@
+<script>
+// Step-through highlighting for quarto-diagrams process diagrams.
+// Add the class .stepper to a .process container. Each click then
+// highlights one step and dims the others.
+(function () {
+  function setup() {
+    // 1. Add one invisible Reveal fragment per step.
+    document.querySelectorAll('.process.stepper').forEach(function (proc) {
+      if (proc.dataset.stepperReady) return;
+      proc.dataset.stepperReady = '1';
+      var n = proc.querySelectorAll(':scope > .item').length;
+      for (var i = 1; i <= n; i++) {
+        var s = document.createElement('span');
+        s.className = 'fragment stepper-step';
+        proc.parentNode.insertBefore(s, proc.nextSibling);
+      }
+    });
+    Reveal.sync();
+    Reveal.on('fragmentshown', update);
+    Reveal.on('fragmenthidden', update);
+    Reveal.on('slidechanged', update);
+    update();
+  }
+
+  // 2. Count visible step fragments and highlight the matching step.
+  function update() {
+    var slide = Reveal.getCurrentSlide();
+    if (!slide) return;
+    slide.querySelectorAll('.process.stepper').forEach(function (proc) {
+      var step = slide.querySelectorAll('.stepper-step.visible').length;
+      var nodes = proc.querySelectorAll(':scope > .node');
+      var notes = proc.querySelectorAll(':scope > .annotation');
+      var lines = proc.querySelectorAll(':scope > svg line');
+      [nodes, notes, lines].forEach(function (group) {
+        group.forEach(function (el, i) {
+          el.classList.toggle('is-active', step > 0 && i === step - 1);
+          el.classList.toggle('is-dim', step > 0 && i !== step - 1);
+        });
+      });
+    });
+  }
+
+  // 3. Start once the page and Reveal are both ready, whatever order
+  //    they finish in. Retries until Reveal exists.
+  function start() {
+    if (typeof Reveal === 'undefined' || !Reveal.isReady) {
+      return setTimeout(start, 100);
+    }
+    if (Reveal.isReady()) setup(); else Reveal.on('ready', setup);
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', start);
+  } else {
+    start();
+  }
+})();
+</script>

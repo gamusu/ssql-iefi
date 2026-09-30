@@ -1,0 +1,37 @@
+# ------------------------------------------------------------------
+# Project settings: this is a Quarto *website* that contains
+# a Reveal.js slide deck plus a companion handout page.
+# ------------------------------------------------------------------
+project:
+  type: website
+  output-dir: _site          # rendered files land here (git-ignored)
+
+website:
+  title: "SSQL × IEFI"
+  navbar:
+    left:
+      - href: index.qmd
+        text: Home
+      - href: slides.qmd
+        text: Slides
+      - href: project-ideas.qmd
+        text: Project ideas
+    right:
+      - icon: github
+        href: https://github.com/gamusu/ssql-iefi
+  page-footer:
+    center: "Social Science Quantitative Lab · Swarthmore College"
+
+# ------------------------------------------------------------------
+# Default format for regular pages (index, project-ideas).
+# Bootswatch themes ONLY apply to HTML pages, not Reveal.js.
+# Try swapping "flatly" for: cosmo, litera, lux, minty, sandstone,
+# simplex, united, yeti ... then re-render to compare.
+# ------------------------------------------------------------------
+format:
+  html:
+    # A theme is a list: the Bootswatch base first, then your own
+    # SCSS file, which overrides the base's variables.
+    theme: [flatly, styles/site.scss]
+    toc: true
+    smooth-scroll: true

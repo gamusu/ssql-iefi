@@ -1,0 +1,282 @@
+/*-- scss:defaults --*/
+// ------------------------------------------------------------------
+// Reveal.js has its OWN theme system (not Bootswatch), but it uses the
+// same Sass pattern. We reuse the site palette so the deck and the
+// website feel like one project.
+// Variable list: https://quarto.org/docs/presentations/revealjs/themes.html
+// ------------------------------------------------------------------
+
+$garnet: #8A1F35;
+$ink:    #1F2A36;
+$teal:   #2E7D6B;
+$mist:   #EEF1F4;
+
+@import url('https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;600&family=Source+Serif+4:opsz,wght@8..60,600&display=swap');
+
+$font-family-sans-serif:     "Public Sans", system-ui, sans-serif;
+$presentation-heading-font:  "Source Serif 4", Georgia, serif;
+$presentation-heading-color: $garnet;
+$presentation-heading-font-weight: 600;
+$presentation-font-size-root: 36px;
+$body-color: $ink;
+$link-color: $garnet;
+$code-block-bg: $mist;
+
+// Mermaid diagrams pick up these Quarto Sass variables
+// (only when no mermaid "theme:" is set in the YAML).
+$mermaid-font-family: $font-family-sans-serif;
+$mermaid-fg-color: $ink;
+$mermaid-node-fg-color: $ink;
+$mermaid-node-bg-color: $mist;
+$mermaid-edge-color: rgba($ink, 0.6);
+$mermaid-label-fg-color: $ink;
+
+/*-- scss:rules --*/
+
+// Section divider slides: garnet background, big type.
+// Used by adding {.divider background-color="#8A1F35"} to a heading.
+.reveal .slides section.divider h1,
+.reveal .slides section.divider h2,
+.reveal .slides section.divider p {
+  color: #ffffff;
+}
+.reveal .slides section.divider h1 { font-size: 2.4em; line-height: 1.05; }
+.reveal .slides section.divider p  { opacity: 0.85; }
+
+// A "big number" callout for data stories.
+.reveal .big-stat {
+  font-family: $presentation-heading-font;
+  font-size: 2.6em;
+  color: $teal;
+  line-height: 1;
+}
+.reveal .stat-label { font-size: 0.7em; }
+
+// Simple panel used in the two-pathway and effort-level slides.
+.reveal .panel {
+  background: $mist;
+  border-top: 5px solid $garnet;
+  padding: 0.6em 0.8em;
+  font-size: 0.75em;
+  height: 100%;
+}
+.reveal .panel.teal { border-top-color: $teal; }
+
+// Placeholder text you still need to fill in.
+.reveal .todo {
+  background: #FFF3BF;
+  padding: 0 0.2em;
+}
+
+// quarto-diagrams computes node sizes assuming border-box sizing
+// (the default in Bootstrap pages, but not in Reveal.js).
+.reveal .process .node { box-sizing: border-box; }
+
+// Larger step labels in process diagrams. The extension shrinks
+// labels automatically if the longest one doesn't fit.
+.reveal .process .node {
+  font-family: $font-family-sans-serif;
+  font-size: 26px;
+  font-weight: 600;
+}
+.reveal .process .annotation { font-size: 17px; }
+
+.reveal .process {
+  max-width: 100%;
+  height: 240px;
+}
+
+// Rounded outer ends on process diagrams.
+// The first node follows the hidden source items; the last node is
+// the one with no node after it.
+.reveal .process .item + .node {
+  border-radius: 96px 0 0 96px;
+}
+.reveal .process .node:not(:has(+ .node)) {
+  border-radius: 0 96px 96px 0;
+}
+
+// Step-through highlighting (see stepper.html).
+.reveal .process.stepper .node,
+.reveal .process.stepper .annotation,
+.reveal .process.stepper svg line {
+  transition: opacity 0.35s ease;
+}
+.reveal .process.stepper .is-dim { opacity: 0.25; }
+.reveal .stepper-step { display: none; }
+
+// Panel titles. (Headings inside panels get turned into nested
+// <section> elements, which Reveal mistakes for extra slides.)
+.reveal .panel .panel-title {
+  display: block;
+  font-family: $presentation-heading-font;
+  font-weight: 600;
+  font-size: 1.3em;
+  line-height: 1.2;
+  color: $garnet;
+  margin-bottom: 0.3em;
+}
+.reveal .equal-headings .panel .panel-title { min-height: 2.4em; }
+
+// About me slide
+.reveal .about { display: flex; align-items: center; }   // center photo and text vertically
+
+.reveal img.about-photo {
+  width: 100%;
+  max-width: 300px;
+  aspect-ratio: 1 / 1;      // square, so the circle isn't an oval
+  object-fit: cover;        // crop instead of stretching
+  border-radius: 50%;
+  border: 6px solid $garnet;
+}
+
+.reveal .about-name {
+  display: block;
+  font-family: $presentation-heading-font;
+  font-weight: 600;
+  font-size: 1.5em;
+  color: $garnet;
+  line-height: 1.1;
+}
+
+.reveal .about-role {
+  display: block;
+  font-size: 0.75em;
+  color: $teal;
+  margin-bottom: 0.6em;
+}
+
+.reveal .about ul { font-size: 0.75em; }
+
+// Image + side quote layout
+.reveal .quote-layout { display: flex; align-items: center; }   // center quote next to image
+
+.reveal .side-quote {
+  font-size: 0.55em;
+  line-height: 1.45;
+  border-left: 4px solid $teal;
+  padding-left: 0.9em;
+  color: rgba($ink, 0.85);
+}
+
+.reveal .side-quote .quote-source {
+  display: block;
+  margin-top: 0.6em;
+  font-size: 0.9em;
+  color: $teal;
+}
+
+// Larger side quote when there's more room (add .roomy)
+.reveal .side-quote.roomy { font-size: 0.62em; }
+
+// Large featured quote
+.reveal .big-quote {
+  font-family: $presentation-heading-font;
+  font-size: 1.35em;
+  line-height: 1.25;
+  color: $garnet;
+}
+
+.reveal .big-quote .quote-source {
+  display: block;
+  margin-top: 0.7em;
+  font-family: $font-family-sans-serif;
+  font-size: 0.45em;
+  color: $teal;
+}
+
+// 2 x 2 grid of cards (IEFI goals slide)
+.reveal .goal-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.7em;
+  margin-top: 0.5em;
+}
+.reveal .goal-grid .panel {
+  height: auto;
+  font-size: 0.7em;
+  padding: 0.7em 0.9em;
+}
+.reveal .goal-grid .data-label {
+  display: block;
+  font-size: 0.8em;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: $teal;
+  margin-bottom: 0.2em;
+}
+
+.reveal .goal-grid .panel .panel-title { min-height: 2.4em; }
+
+// Poll slide QR code
+.reveal img.qr {
+  width: 100%;
+  max-width: 340px;
+  padding: 12px;
+  background: #ffffff;
+  border: 1px solid rgba($ink, 0.15);
+  border-radius: 8px;
+}
+.reveal .qr-caption {
+  display: block;
+  font-size: 0.5em;
+  text-align: center;
+  color: rgba($ink, 0.7);
+}
+
+// Screenshot style
+.reveal img.screenshot {
+  border: 1px solid rgba($ink, 0.15);
+  border-radius: 6px;
+  box-shadow: 0 4px 14px rgba($ink, 0.15);
+}
+
+// Job listing carousel: stacked cards, one visible at a time
+.reveal .job-card {
+  display: grid;
+  grid-template-columns: 56% 1fr;
+  gap: 1.2em;
+  align-items: center;
+  width: 100%;
+  margin-top: 0.4em;
+}
+.reveal .job-card > p { margin: 0; text-align: center; }
+.reveal .job-card img {
+  max-height: 470px;
+  max-width: 100%;
+  width: auto;
+  height: auto;
+}
+.reveal .job-text { font-size: 0.6em; line-height: 1.4; }
+.reveal .job-text p { margin: 0 0 0.7em; }
+.reveal .job-label {
+  display: block;
+  font-size: 0.75em;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: $teal;
+  margin-top: 0.8em;
+}
+.reveal .job-project,
+.reveal .job-role {
+  display: block;
+  font-family: $presentation-heading-font;
+  font-weight: 600;
+  font-size: 1.35em;
+  line-height: 1.2;
+  color: $garnet;
+}
+.reveal .job-role { font-size: 1.1em; color: $ink; }
+.reveal .job-count {
+  display: block;
+  font-size: 0.75em;
+  color: rgba($ink, 0.55);
+}
+
+// Highlight text 
+.highlight {
+  background: #FFF3BF;
+  padding: 0 0.2em;
+}
